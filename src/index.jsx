@@ -1,8 +1,10 @@
 import { createRoot } from "react-dom/client";
+import { MainView } from "/components/mainView/mainView";
+
 import "./index.scss";
 
 const MyFlixApplication = () => {
-  return <div>Good morning, movie lovers!</div>;
+  return <MainView />;
 };
 
 const container = document.querySelector("#root");
