@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MovieCard } from "..movieCard/movieCard";
+import { MovieCard } from "../movieCard/movieCard";
 import { MovieView } from "../movieView/movieView";
 
 export const MainView = () => {
@@ -17,9 +17,9 @@ export const MainView = () => {
       id: 2,
       title: "La La Land",
       genre: "romance",
-      description: "",
-      image:
+      description:
         "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
+      image: "",
       director: "Damien Chazelle",
     },
     {
@@ -33,7 +33,7 @@ export const MainView = () => {
     },
   ]);
 
-  const [selectedMovies, setSelectedMovie] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   if (selectedMovie) {
     return (
@@ -54,8 +54,8 @@ export const MainView = () => {
         <MovieCard
           key={movie.id}
           movie={movie}
-          onBookClick={(newSelectedMovie) => {
-            setSelectedBook(newSelectedMovie);
+          onMovieClick={(newSelectedMovie) => {
+            setSelectedMovie(newSelectedMovie);
           }}
         />
       ))}

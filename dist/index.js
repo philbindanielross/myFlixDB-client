@@ -2978,7 +2978,7 @@ $RefreshReg$(_c, "MyFlixApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/mainView/mainView":"81dIE","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf","./components/mainView/mainView":"81dIE"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27221,155 +27221,7 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"81dIE":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$606d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$606d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MainView", ()=>MainView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _movieCard = require("../movieCard/movieCard");
-var _movieView = require("../movieView/movieView");
-var _s = $RefreshSig$();
-const MainView = ()=>{
-    _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "The Matrix",
-            genre: "sci-fi",
-            description: "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-            image: "",
-            director: "The Wachowskis"
-        },
-        {
-            id: 2,
-            title: "La La Land",
-            genre: "romance",
-            description: "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
-            image: "",
-            director: "Damien Chazelle"
-        },
-        {
-            id: 3,
-            title: "Slumdog Millionaire",
-            genre: "drama",
-            description: "A Mumbai teenager reflects on his life after being accused of cheating on the Indian version of 'Who Wants to Be a Millionaire?'",
-            image: "",
-            director: "Danny Boyle"
-        }
-    ]);
-    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
-        movie: selectedMovie,
-        onBackClick: ()=>setSelectedMovie(null)
-    }, void 0, false, {
-        fileName: "src/components/mainView/mainView.jsx",
-        lineNumber: 40,
-        columnNumber: 7
-    }, undefined);
-    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "We're sorry! There seems to be no movies available."
-    }, void 0, false, {
-        fileName: "src/components/mainView/mainView.jsx",
-        lineNumber: 48,
-        columnNumber: 12
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                movie: movie,
-                onMovieClick: (newSelectedMovie)=>{
-                    setSelectedMovie(newSelectedMovie);
-                }
-            }, movie.id, false, {
-                fileName: "src/components/mainView/mainView.jsx",
-                lineNumber: 54,
-                columnNumber: 9
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/components/mainView/mainView.jsx",
-        lineNumber: 52,
-        columnNumber: 5
-    }, undefined);
-};
-_s(MainView, "qkZMmLaoPrS4lmQ5dceY6ydEMlI=");
-_c = MainView;
-var _c;
-$RefreshReg$(_c, "MainView");
-
-  $parcel$ReactRefreshHelpers$606d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movieCard/movieCard":"gGoIK","../movieView/movieView":"2pbYt","@parcel/transformer-js/src/esmodule-helpers.js":"d3PRW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf"}],"gGoIK":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1b04.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const MovieCard = ({ movie, onMovieClick })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        onClick: ()=>{
-            onMovieClick(movie);
-        },
-        children: movie.title
-    }, void 0, false, {
-        fileName: "src/components/movieCard/movieCard.jsx",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = MovieCard;
-var _c;
-$RefreshReg$(_c, "MovieCard");
-
-  $parcel$ReactRefreshHelpers$1b04.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"d3PRW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf"}],"d3PRW":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"kk3Hf":[function(require,module,exports) {
+},{}],"lJZlQ":[function() {},{}],"kk3Hf":[function(require,module,exports) {
 "use strict";
 var Refresh = require("f89c45dacf42ad7e");
 function debounce(func, delay) {
@@ -27507,7 +27359,93 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"f89c45dacf42ad7e":"jGobf"}],"2pbYt":[function(require,module,exports) {
+},{"f89c45dacf42ad7e":"jGobf"}],"81dIE":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$606d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$606d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _movieCard = require("../movieCard/movieCard");
+var _movieView = require("../movieView/movieView");
+var _s = $RefreshSig$();
+const MainView = ()=>{
+    _s();
+    const [movies, setMovies] = (0, _react.useState)([
+        {
+            id: 1,
+            title: "The Matrix",
+            genre: "sci-fi",
+            description: "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+            image: "",
+            director: "The Wachowskis"
+        },
+        {
+            id: 2,
+            title: "La La Land",
+            genre: "romance",
+            description: "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
+            image: "",
+            director: "Damien Chazelle"
+        },
+        {
+            id: 3,
+            title: "Slumdog Millionaire",
+            genre: "drama",
+            description: "A Mumbai teenager reflects on his life after being accused of cheating on the Indian version of 'Who Wants to Be a Millionaire?'",
+            image: "",
+            director: "Danny Boyle"
+        }
+    ]);
+    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
+        movie: selectedMovie,
+        onBackClick: ()=>setSelectedMovie(null)
+    }, void 0, false, {
+        fileName: "src/components/mainView/mainView.jsx",
+        lineNumber: 40,
+        columnNumber: 7
+    }, undefined);
+    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "We're sorry! There seems to be no movies available."
+    }, void 0, false, {
+        fileName: "src/components/mainView/mainView.jsx",
+        lineNumber: 48,
+        columnNumber: 12
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                movie: movie,
+                onBookClick: (newSelectedMovie)=>{
+                    setSelectedBook(newSelectedMovie);
+                }
+            }, movie.id, false, {
+                fileName: "src/components/mainView/mainView.jsx",
+                lineNumber: 54,
+                columnNumber: 9
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/components/mainView/mainView.jsx",
+        lineNumber: 52,
+        columnNumber: 5
+    }, undefined);
+};
+_s(MainView, "qkZMmLaoPrS4lmQ5dceY6ydEMlI=");
+_c = MainView;
+var _c;
+$RefreshReg$(_c, "MainView");
+
+  $parcel$ReactRefreshHelpers$606d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movieView/movieView":"2pbYt","@parcel/transformer-js/src/esmodule-helpers.js":"d3PRW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf","../movieCard/movieCard":"gGoIK"}],"2pbYt":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4504 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27635,6 +27573,68 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"d3PRW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf"}],"lJZlQ":[function() {},{}]},["jJJXK","5odfy","d8Dch"], "d8Dch", "parcelRequire6cb5")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"d3PRW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf"}],"d3PRW":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
-//# sourceMappingURL=index.b4b6dfad.js.map
+},{}],"gGoIK":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1b04.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const MovieCard = ({ movie, onMovieClick })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        onClick: ()=>{
+            onMovieClick(movie);
+        },
+        children: movie.title
+    }, void 0, false, {
+        fileName: "src/components/movieCard/movieCard.jsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = MovieCard;
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$1b04.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"d3PRW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kk3Hf"}]},["jJJXK","5odfy","d8Dch"], "d8Dch", "parcelRequire6cb5")
+
+//# sourceMappingURL=index.js.map
