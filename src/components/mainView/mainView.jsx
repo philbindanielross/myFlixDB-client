@@ -1,39 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MovieCard } from "../movieCard/movieCard";
 import { MovieView } from "../movieView/movieView";
 
 export const MainView = () => {
-  const [movies, setMovies] = useState([
-    {
-      id: 1,
-      title: "The Matrix",
-      genre: "sci-fi",
-      description:
-        "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-      image: "",
-      director: "The Wachowskis",
-    },
-    {
-      id: 2,
-      title: "La La Land",
-      genre: "romance",
-      description:
-        "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
-      image: "",
-      director: "Damien Chazelle",
-    },
-    {
-      id: 3,
-      title: "Slumdog Millionaire",
-      genre: "drama",
-      description:
-        "A Mumbai teenager reflects on his life after being accused of cheating on the Indian version of 'Who Wants to Be a Millionaire?'",
-      image: "",
-      director: "Danny Boyle",
-    },
-  ]);
+  const [movies, setMovies] = useState([]);
 
   const [selectedMovie, setSelectedMovie] = useState(null);
+
+  useEffect(() => {
+    fetch("https://favoritemoviesapi-9a2228476f9c.herokuapp.com/movies/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("movies from 'myfavoritemoviesapi:", data);
+        const apiMovies = data.map((movieData) => {
+          return {
+            title: movieData.Title,
+            actors: movieData.Actors,
+            description: movieData.Description,
+            genre: movieData.Genre.Name,
+            director: movieData.Director.Name,
+            id: movieData._id,
+          };
+        });
+        setMovies(apiMovies);
+      });
+  }, []);
 
   if (selectedMovie) {
     return (

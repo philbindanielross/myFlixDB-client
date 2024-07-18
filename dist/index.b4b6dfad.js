@@ -27238,46 +27238,37 @@ var _movieView = require("../movieView/movieView");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "The Matrix",
-            genre: "sci-fi",
-            description: "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-            image: "",
-            director: "The Wachowskis"
-        },
-        {
-            id: 2,
-            title: "La La Land",
-            genre: "romance",
-            description: "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
-            image: "",
-            director: "Damien Chazelle"
-        },
-        {
-            id: 3,
-            title: "Slumdog Millionaire",
-            genre: "drama",
-            description: "A Mumbai teenager reflects on his life after being accused of cheating on the Indian version of 'Who Wants to Be a Millionaire?'",
-            image: "",
-            director: "Danny Boyle"
-        }
-    ]);
+    const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        fetch("https://favoritemoviesapi-9a2228476f9c.herokuapp.com/movies/").then((response)=>response.json()).then((data)=>{
+            console.log("movies from 'myfavoritemoviesapi:", data);
+            const apiMovies = data.map((movieData)=>{
+                return {
+                    title: movieData.Title,
+                    actors: movieData.Actors,
+                    description: movieData.Description,
+                    genre: movieData.Genre.Name,
+                    director: movieData.Director.Name,
+                    id: movieData._id
+                };
+            });
+            setMovies(apiMovies);
+        });
+    }, []);
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/mainView/mainView.jsx",
-        lineNumber: 40,
+        lineNumber: 31,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "We're sorry! There seems to be no movies available."
     }, void 0, false, {
         fileName: "src/components/mainView/mainView.jsx",
-        lineNumber: 48,
+        lineNumber: 39,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27288,16 +27279,16 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/mainView/mainView.jsx",
-                lineNumber: 54,
+                lineNumber: 45,
                 columnNumber: 9
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/mainView/mainView.jsx",
-        lineNumber: 52,
+        lineNumber: 43,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "qkZMmLaoPrS4lmQ5dceY6ydEMlI=");
+_s(MainView, "PO+XgOji7E32nFJj3H5UPLPJ7w4=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
