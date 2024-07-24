@@ -25,6 +25,7 @@ export const SignupView = () => {
     }).then((response) => {
       if (response.ok) {
         alert("Signup successful");
+        //somewhere here, I need something that
         window.location.reload();
       } else {
         alert("Signup failed");

@@ -8,8 +8,8 @@ export const LoginView = ({ onLoggedIn }) => {
     event.preventDefault();
 
     const data = {
-      access: username,
-      secret: password,
+      username: username,
+      password: password,
     };
 
     fetch("https://favoritemoviesapi-9a2228476f9c.herokuapp.com/login/", {
@@ -22,23 +22,17 @@ export const LoginView = ({ onLoggedIn }) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.user) {
+          localStorage.setItem("user", JSON.stringify(data.user));
+          localStorage.setItem("token", data.token);
           onLoggedIn(data.user, data.token);
         } else {
-          alert("No such user found");
+          alert("No such user");
         }
       })
       .catch((e) => {
         alert("Something went wrong");
       });
   };
-
-  if (data.user) {
-    localStorage.setItem("user", JSON.stringify(data.user));
-    localStorage.setItem("token", data.token);
-    onLoggedIn(data.user, data.token);
-  } else {
-    alert("No such user");
-  }
 
   return (
     <form onSubmit={handleSubmit}>
