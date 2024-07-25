@@ -16,21 +16,28 @@ export const SignupView = () => {
       Birthday: birthday,
     };
 
-    fetch("https://favoritemoviesapi-9a2228476f9c.herokuapp.com/users/", {
+    fetch("https://favoritemoviesapi-9a2228476f9c.herokuapp.com/users", {
       method: "POST",
-      body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
+        body: JSON.stringify(data),
       },
-    }).then((response) => {
-      if (response.ok) {
-        alert("Signup successful");
-        //somewhere here, I need something that
-        window.location.reload();
-      } else {
-        alert("Signup failed");
-      }
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Signup successful");
+          window.location.reload();
+        } else {
+          response.json().then((error) => {
+            console.error("Error response:", error);
+            alert(`Signup failed: ${error.message}`);
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+        alert("Signup failed due to a network error");
+      });
   };
 
   return (
@@ -68,7 +75,7 @@ export const SignupView = () => {
         <input
           type="date"
           value={birthday}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setBirthday(e.target.value)}
         />
       </label>
       <button type="submit">Sign up</button>
