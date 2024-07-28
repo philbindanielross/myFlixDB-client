@@ -27844,9 +27844,9 @@ const SignupView = ()=>{
         fetch("https://favoritemoviesapi-9a2228476f9c.herokuapp.com/users", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                body: JSON.stringify(data)
-            }
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
         }).then((response)=>{
             if (response.ok) {
                 alert("Signup successful");

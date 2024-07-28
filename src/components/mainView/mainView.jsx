@@ -75,19 +75,7 @@ export const MainView = () => {
   }
 
   if (movies.length === 0) {
-    return (
-      <>
-        <button
-          onClick={() => {
-            setUser(null);
-            setToken(null);
-          }}
-        >
-          Logout
-        </button>
-        <div>We're sorry! There seems to be no movies available.</div>
-      </>
-    );
+    return <div>We're sorry! There seems to be no movies available.</div>;
   }
 
   return (
