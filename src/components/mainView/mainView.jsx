@@ -12,21 +12,6 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  if (!user) {
-    return (
-      <>
-        <LoginView
-          onLoggedIn={(user, token) => {
-            setUser(user);
-            setToken(token);
-          }}
-        />
-        or
-        <SignupView />
-      </>
-    );
-  }
-
   useEffect(() => {
     if (!token) return;
 
@@ -51,7 +36,18 @@ export const MainView = () => {
   }, [token]);
 
   if (!user) {
-    return <LoginView onLoggedIn={(user) => setUser()} />;
+    return (
+      <>
+        <LoginView
+          onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
+          }}
+        />
+        or
+        <SignupView />
+      </>
+    );
   }
 
   if (selectedMovie) {
@@ -75,7 +71,11 @@ export const MainView = () => {
   }
 
   if (movies.length === 0) {
-    return <div>We're sorry! There seems to be no movies available.</div>;
+    return (
+      <>
+        <div>We're sorry! There seems to be no movies available.</div>
+      </>
+    );
   }
 
   return (
@@ -84,6 +84,7 @@ export const MainView = () => {
         onClick={() => {
           setUser(null);
           setToken(null);
+          localStorage.clear();
         }}
       >
         Logout
