@@ -11,7 +11,7 @@ export const LoginView = ({ onLoggedIn }) => {
       Username: username,
       Password: password,
     };
-
+    console.log(data);
     fetch("https://favoritemoviesapi-9a2228476f9c.herokuapp.com/login/", {
       method: "POST",
       headers: {
